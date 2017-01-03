@@ -11,8 +11,10 @@ import {
   Text,
   View,
   Image, 
-  TouchableHighlight
 } from 'react-native';
+
+
+import Button from './components/myButton.js';
 
 export default class bustaRhymes extends Component {
   render() {
@@ -27,12 +29,7 @@ export default class bustaRhymes extends Component {
           Pick three words and "bust a Rhyme"
         </Text>
       </View>
-      <TouchableHighlight onPress={this._onPressButton}>
-      <Image
-        style={styles.button}
-        source={require('./assets/myButton.png')}
-      />
-    </TouchableHighlight>
+      <Button text={'Go!'} onPress={() => { }}/>
       </View>
     );
   }
