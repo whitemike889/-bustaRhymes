@@ -9,23 +9,30 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  Image, 
+  TouchableHighlight
 } from 'react-native';
 
 export default class bustaRhymes extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
+      <View style={styles.logo}>
+        <Image
+          style={styles.header}
+          source={require('./assets/logo.png')}
+        />
+        <Text style={styles.text}>
+          Pick three words and "bust a Rhyme"
         </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
+      </View>
+      <TouchableHighlight onPress={this._onPressButton}>
+      <Image
+        style={styles.button}
+        source={require('./assets/myButton.png')}
+      />
+    </TouchableHighlight>
       </View>
     );
   }
@@ -36,18 +43,20 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#FF0080',
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
+  logo: {
+    margin: 20,
+    justifyContent: 'center',
+    marginBottom: 100,
   },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
+  header: {
+    alignSelf: 'center',
+    margin: 30,
   },
+  text: {
+    fontSize: 20
+  }
 });
 
 AppRegistry.registerComponent('bustaRhymes', () => bustaRhymes);
